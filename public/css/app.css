@@ -88,12 +88,15 @@ body .hidden {
 }
 .validation-errors__errors {
   width: 100%;
+  max-width: 100%;
 }
 .validation-errors__errors__error {
   background-color: #dc2626;
   color: white;
   font-weight: 500;
   padding: 0.5rem 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.1rem;
 }
 
 .form-section {
@@ -112,6 +115,7 @@ body .hidden {
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 2px 5px #cccccc;
+  margin: 0 auto;
 }
 .form-section__form__section__label, .form-section__form__section__holder__label {
   font-weight: 300;
@@ -152,6 +156,7 @@ body .hidden {
 .form-section__form__section__link {
   margin: auto 0 auto auto;
   font-size: 0.9rem;
+  text-decoration: underline;
   transition: color 0.2s ease-out;
 }
 .form-section__form__section__link:hover {

@@ -5,16 +5,10 @@
         <h1 class="login__heading hidden">Login</h1>
 
         <div class="form-section">
-            <a class="form-section__homepage-link" href="/">
-                <img
-                class="form-section__homepage-link__cogip-logo"
-                src="{{ asset('images/logo/cogip-dark.svg') }}"
-                alt="COGIP logo"
-                >
-            </a>
+            <x-application-logo />
 
             <!-- Session Status -->
-            <x-auth-session-status :status="session('status')" />
+            <?php // <x-auth-session-status :status="session('status')" /> ?>
 
             <!-- Validation Errors -->
             <x-auth-validation-errors :errors="$errors" />
@@ -29,32 +23,28 @@
                 <!-- Email Address -->
                 <div class="form-section__form__section">
                     <x-label
-                    class="form-section__form__section__label"
                     for="email"
                     :value="__('Email')"
                     />
-            
+
                     <x-input
                     id="email"
-                    class="form-section__form__section__text-input"
                     type="email"
                     name="email"
                     :value="old('email')"
                     required autofocus
                     />
                 </div>
-            
+
                 <!-- Password -->
                 <div class="form-section__form__section">
                     <x-label
-                    class="form-section__form__section__label"
                     for="password"
                     :value="__('Password')" 
                     />
             
                     <x-input
                     id="password"
-                    class="form-section__form__section__text-input"
                     type="password"
                     name="password"
                     required autocomplete="current-password"
