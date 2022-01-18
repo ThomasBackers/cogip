@@ -1,0 +1,14 @@
+.validation-errors {
+    text-align: center;
+    padding-bottom: 1.5rem;
+
+    &__errors {
+        width: 100%;
+        &__error {
+            background-color: $invalidColor;
+            color: $absoluteWhite;
+            font-weight: 500;
+            padding: .5rem 0;
+        }
+    }
+}

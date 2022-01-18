@@ -1,0 +1,92 @@
+.form-section {
+    display: flex;
+    flex-direction: column;
+    
+    &__homepage-link {
+        width: 200px;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+    }
+    
+    &__form {
+        width: 90vw;
+        max-width: 480px;
+        padding: 1.5rem;
+        background-color: $absoluteWhite;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px lighten(black, 80%);
+
+        &__section {
+            &__label,
+            &__holder__label {
+                font-weight: 300;
+            }
+
+            &__label {
+                display: block;
+                padding-bottom: .5rem;
+            }
+
+            &__text-input,
+            &__holder__checkbox {
+                border: 1px solid lighten($activeNavLinkColor, 10%);
+                box-shadow: 0 1px 1px lighten(black, 90%);
+            }
+            
+            &__text-input {
+                padding: .75rem;
+                width: 100%;
+                margin-bottom: 1rem;
+                border-radius: 7px;
+            }
+
+            &__holder {
+                &__checkbox {
+                    width: 1rem;
+                    height: 1rem;
+                    border-radius: 3px;
+                    transition: background-color .2s ease-in-out;
+                    cursor: pointer;
+                    &:checked {
+                        background-color: $activeBtnColor;
+                    }
+                }
+
+                &__label {
+                    padding-left: .3rem;
+                    position: relative;
+                    top: -2px;
+                }
+            }
+
+            &:last-child {
+                display: flex;
+                padding-top: 1rem;
+            }
+
+            &__link {
+                margin: auto 0 auto auto;
+                font-size: .9rem;
+                transition: color .2s ease-out;
+                    &:hover {
+                        color: $activeBtnColor;
+                    }
+            }
+
+            &__button {
+                margin-left: 1rem;
+                text-transform: uppercase;
+                font-weight: 500;
+                background-color: $cogipColor;
+                color: $absoluteWhite;
+                padding: .4rem .8rem;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color .2s ease-out;
+                &:hover {
+                    background-color: $activeBtnColor;
+                }
+            }
+        }
+    }
+}

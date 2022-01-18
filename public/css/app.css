@@ -67,8 +67,107 @@ textarea {
 
 body {
   min-height: 100vh;
+  background-color: #f3f4f6;
+}
+body main {
+  display: flex;
+}
+body section {
+  margin: auto;
+}
+body a {
+  display: inline-block;
+}
+body .hidden {
+  display: none;
+}
+
+.validation-errors {
+  text-align: center;
+  padding-bottom: 1.5rem;
+}
+.validation-errors__errors {
+  width: 100%;
+}
+.validation-errors__errors__error {
+  background-color: #dc2626;
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 0;
+}
+
+.form-section {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  background-color: #f3f4f6;
+}
+.form-section__homepage-link {
+  width: 200px;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+.form-section__form {
+  width: 90vw;
+  max-width: 480px;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px #cccccc;
+}
+.form-section__form__section__label, .form-section__form__section__holder__label {
+  font-weight: 300;
+}
+.form-section__form__section__label {
+  display: block;
+  padding-bottom: 0.5rem;
+}
+.form-section__form__section__text-input, .form-section__form__section__holder__checkbox {
+  border: 1px solid #b8bdc6;
+  box-shadow: 0 1px 1px #e6e6e6;
+}
+.form-section__form__section__text-input {
+  padding: 0.75rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 7px;
+}
+.form-section__form__section__holder__checkbox {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 3px;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+.form-section__form__section__holder__checkbox:checked {
+  background-color: #374151;
+}
+.form-section__form__section__holder__label {
+  padding-left: 0.3rem;
+  position: relative;
+  top: -2px;
+}
+.form-section__form__section:last-child {
+  display: flex;
+  padding-top: 1rem;
+}
+.form-section__form__section__link {
+  margin: auto 0 auto auto;
+  font-size: 0.9rem;
+  transition: color 0.2s ease-out;
+}
+.form-section__form__section__link:hover {
+  color: #374151;
+}
+.form-section__form__section__button {
+  margin-left: 1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  background-color: #1f2937;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-out;
+}
+.form-section__form__section__button:hover {
+  background-color: #374151;
 }
