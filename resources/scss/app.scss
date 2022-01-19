@@ -3,4 +3,10 @@
 @import './base/typography';
 @import './base/base';
 @import './components/auth-validation-errors';
+@import './components/info';
 @import './components/form';
+// Font-Awesome
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";

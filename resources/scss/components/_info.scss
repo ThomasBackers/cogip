@@ -1,0 +1,15 @@
+.info {
+    display: flex;
+    flex-direction: column;
+
+    &__icon {
+        font-size: 2rem;
+        margin: 0 auto;
+        color: $cogipColor;
+    }
+
+    &__message {
+        padding: 1rem .2rem;
+        color: $activeBtnColor;
+    }
+}

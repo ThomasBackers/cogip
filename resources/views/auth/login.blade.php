@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.guest')
 
 @section('content')
     <section class="login">
@@ -8,7 +8,7 @@
             <x-application-logo />
 
             <!-- Session Status -->
-            <?php // <x-auth-session-status :status="session('status')" /> ?>
+            <?php /* <x-auth-session-status :status="session('status')" /> */ ?>
 
             <!-- Validation Errors -->
             <x-auth-validation-errors :errors="$errors" />

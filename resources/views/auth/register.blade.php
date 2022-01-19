@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="login">
-        <h1 class="login__heading hidden">Register</h1>
+    <section class="register">
+        <h1 class="register__heading hidden">Register</h1>
 
         <div class="form-section">
             <x-application-logo />
