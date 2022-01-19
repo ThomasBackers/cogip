@@ -111,6 +111,7 @@ body .hidden {
 .info__message {
   padding: 1rem 0.2rem;
   color: #374151;
+  text-align: center;
 }
 
 .form-section {
