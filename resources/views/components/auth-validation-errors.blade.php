@@ -1,12 +1,14 @@
 @props(['errors'])
 
 @if ($errors->any())
-    <div {{ $attributes->merge(['class' => 'validation-errors']) }}>
-        <ul class="validation-errors__errors">
+    <div {{ $attributes }}>
+        <div class="font-medium text-red-600">
+            {{ __('Whoops! Something went wrong.') }}
+        </div>
+
+        <ul class="mt-3 list-disc list-inside text-sm text-red-600">
             @foreach ($errors->all() as $error)
-                <li class="validation-errors__errors__error">
-                    {{ $error }}
-                </li>
+                <li>{{ $error }}</li>
             @endforeach
         </ul>
     </div>
