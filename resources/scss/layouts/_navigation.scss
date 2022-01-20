@@ -16,6 +16,7 @@
         color: $absoluteWhite;
         font-size: 2.5rem;
         cursor: pointer;
+        transition: transform 0.2s ease-out;
     }
 }
 
@@ -23,6 +24,7 @@
     background-color: $absoluteWhite;
     overflow: hidden;
     transition: height 0.2s ease-out;
+    height: 0px;
     &__navlinks {
         &__elt {
             &__link {

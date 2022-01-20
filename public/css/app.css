@@ -219,12 +219,14 @@ body .hidden {
   color: white;
   font-size: 2.5rem;
   cursor: pointer;
+  transition: transform 0.2s ease-out;
 }
 
 .dropdown-menu {
   background-color: white;
   overflow: hidden;
   transition: height 0.2s ease-out;
+  height: 0px;
 }
 .dropdown-menu__navlinks__elt {
   border-bottom: 3px solid #f3f4f6;
