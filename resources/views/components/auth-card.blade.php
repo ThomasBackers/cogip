@@ -1,4 +1,4 @@
-<div class="content">
+<div class="auth-content">
     <div class="form-section">
         {{ $logo }}
 

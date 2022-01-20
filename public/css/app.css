@@ -72,11 +72,18 @@ body {
 body main {
   display: flex;
 }
+body .main {
+  flex-direction: column;
+}
 body .guest {
   min-height: 100vh;
 }
-body .content {
+body .auth-content {
   margin: auto;
+}
+body .container {
+  margin: 0 auto;
+  max-width: 1600px;
 }
 body a {
   display: inline-block;
@@ -193,6 +200,14 @@ body .hidden {
 }
 .form-section__form__section__button:hover {
   background-color: #374151;
+}
+
+.navigation {
+  display: flex;
+  background-color: #1f2937;
+}
+.navigation .container {
+  padding: 1rem 0;
 }
 
 /*!

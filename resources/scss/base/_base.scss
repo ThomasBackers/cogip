@@ -6,12 +6,21 @@ body {
         display: flex;
     }
 
+    .main {
+        flex-direction: column;
+    }
+
     .guest {
         min-height: 100vh;
     }
 
-    .content {
+    .auth-content {
         margin: auto;
+    }
+
+    .container {
+        margin: 0 auto;
+        max-width: 1600px;
     }
 
     a {
