@@ -12,6 +12,12 @@
     </div>
 </nav>
 
+<div class="welcome-bar">
+    <p class="welcome-bar__message">
+        Welcome {{ Auth::user()->name }}!
+    </p>
+</div>
+
 <nav class="dropdown-menu">
     <ul class="dropdown-menu__navlinks">
         <li class="dropdown-menu__navlinks__elt">
@@ -39,9 +45,16 @@
         </li>
 
         <li class="dropdown-menu__navlinks__elt">
-            <a class="dropdown-menu__navlinks__elt__link" href="/register">
-                logout
-            </a>
+            <form action="{{ route('logout') }}" method="post">
+                @csrf
+
+                <button
+                class="dropdown-menu__navlinks__elt__link"
+                type="submit"
+                >
+                    logout
+                </button>
+            </form>
         </li>
     </ul>
 </nav>

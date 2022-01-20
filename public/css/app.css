@@ -222,6 +222,18 @@ body .hidden {
   transition: transform 0.2s ease-out;
 }
 
+.welcome-bar {
+  background-color: #15803d;
+  padding: 0.5rem 0;
+}
+.welcome-bar__message {
+  text-align: center;
+  color: white;
+  font-size: 0.9rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
 .dropdown-menu {
   background-color: white;
   overflow: hidden;
@@ -232,13 +244,14 @@ body .hidden {
   border-bottom: 3px solid #f3f4f6;
 }
 .dropdown-menu__navlinks__elt__link {
-  display: block;
+  width: 100%;
   text-align: center;
   text-transform: uppercase;
   font-weight: 500;
   color: #1f2937;
   font-size: 0.9rem;
   padding: 0.75rem 0;
+  cursor: pointer;
 }
 
 /*!
