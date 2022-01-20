@@ -3,6 +3,38 @@
     background-color: $cogipColor;
     
     .container {
+        display: flex;
+        justify-content: space-between;
         padding: 1rem 0;
+    }
+
+    &__logo {
+        margin: auto 0;
+    }
+    
+    &__dropdown-icon {
+        color: $absoluteWhite;
+        font-size: 2.5rem;
+        cursor: pointer;
+    }
+}
+
+.dropdown-menu {
+    background-color: $absoluteWhite;
+    overflow: hidden;
+    transition: height 0.2s ease-out;
+    &__navlinks {
+        &__elt {
+            &__link {
+                display: block;
+                text-align: center;
+                text-transform: uppercase;
+                font-weight: 500;
+                color: $cogipColor;
+                font-size: .9rem;
+                padding: .75rem 0;
+            }
+            border-bottom: 3px solid $backgroundColor;
+        }
     }
 }

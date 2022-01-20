@@ -5479,16 +5479,16 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"];
-alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start(); // // CONST
-// const main = document.querySelector('main')
-// // const burgerMenu = document.querySelector('.header__nav__burger-menu')
-// // const navList = document.querySelector('.mobile-nav__list')
-// // MAIN HEIGHT SIZING
-// const vhToPixels = vh => { return Math.round(window.innerHeight / (100 / vh)) }
-// main.style.minHeight = vhToPixels(100) + 'px'
-// window.addEventListener('resize', () => {
-//     main.style.minHeight = vhToPixels(100) + 'px'
-// })
+alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start(); // CONST
+
+var dropdownButton = document.querySelector('.navigation__dropdown-icon');
+var dropdownMenu = document.querySelector('.dropdown-menu'); // PRESETS
+
+dropdownMenu.style.height = '0px'; // DROPDOWN MENU
+
+dropdownButton.addEventListener('click', function () {
+  dropdownMenu.style.height === '0px' ? dropdownMenu.style.height = '225px' : dropdownMenu.style.height = '0px';
+});
 
 /***/ }),
 
