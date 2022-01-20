@@ -6,6 +6,10 @@ body {
         display: flex;
     }
 
+    .guest {
+        min-height: 100vh;
+    }
+
     .content {
         margin: auto;
     }

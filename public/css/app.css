@@ -72,6 +72,9 @@ body {
 body main {
   display: flex;
 }
+body .guest {
+  min-height: 100vh;
+}
 body .content {
   margin: auto;
 }
