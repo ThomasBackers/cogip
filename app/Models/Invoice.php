@@ -13,12 +13,12 @@ class Invoice extends Model
         'invoice_number',
         'amount',
         'outstanding_balance',
-        'people_id',
+        'contact_id',
         'company_id'
     ];
 
-    public function people()
+    public function contact()
     {
-        $this->belongsTo(People::class);
+        $this->belongsTo(Contact::class);
     }
 }

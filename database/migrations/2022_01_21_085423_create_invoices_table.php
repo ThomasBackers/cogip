@@ -20,10 +20,10 @@ class CreateInvoicesTable extends Migration
             $table->decimal('amount', $precision = 8, $scale = 2);
             $table->decimal('outstanding_balance', $precision = 8, $scale = 2);
             // foreign keys
-            $table->unsignedBigInteger('people_id');
-            $table->foreign('people_id')->references('id')->on('people');
+            $table->unsignedBigInteger('contact_id');
+            $table->foreign('contact_id')->references('id')->on('contacts');
             $table->unsignedBigInteger('company_id');
-            $table->foreign('company_id')->references('company_id')->on('people');
+            $table->foreign('company_id')->references('company_id')->on('contacts');
         });
     }
 

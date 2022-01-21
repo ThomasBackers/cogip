@@ -19,8 +19,8 @@ class Company extends Model
         'category'
     ];
 
-    public function people()
+    public function contact()
     {
-        return $this->hasMany(People::class);
+        return $this->hasMany(Contact::class);
     }
 }
