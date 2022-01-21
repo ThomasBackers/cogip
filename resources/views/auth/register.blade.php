@@ -34,19 +34,25 @@
             <div class="form-section__form__section">
                 <x-label for="password" :value="__('Password')" />
 
-                <x-input id="password"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
+                <x-input
+                id="password"
+                type="password"
+                name="password"
+                required
+                autocomplete="new-password"
+                />
             </div>
 
             <!-- Confirm Password -->
             <div class="form-section__form__section">
                 <x-label for="password_confirmation" :value="__('Confirm Password')" />
 
-                <x-input id="password_confirmation"
-                                type="password"
-                                name="password_confirmation" required />
+                <x-input
+                id="password_confirmation"
+                type="password"
+                name="password_confirmation"
+                required
+                />
             </div>
 
             <div class="form-section__form__section">
