@@ -19,7 +19,7 @@ class Company extends Model
         'category'
     ];
 
-    public function contact()
+    public function contacts()
     {
         return $this->hasMany(Contact::class);
     }

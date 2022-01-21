@@ -23,7 +23,7 @@ Route::get('/dashboard', function () {
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
     route::get('/users', function () {
-        return view('dashboard');
+        echo 'ADMIN';
     });
 });
 

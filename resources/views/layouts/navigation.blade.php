@@ -39,8 +39,8 @@
         </li>
 
         <li class="dropdown-menu__navlinks__elt">
-            <a class="dropdown-menu__navlinks__elt__link" href="/register">
-                add a user
+            <a class="dropdown-menu__navlinks__elt__link" href="/users">
+                users
             </a>
         </li>
 

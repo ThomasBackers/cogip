@@ -22,7 +22,7 @@ class Contact extends Model
         return $this->belongsTo(Company::class);
     }
 
-    public function invoice()
+    public function invoices()
     {
         return $this->hasMany(Invoice::class);
     }
