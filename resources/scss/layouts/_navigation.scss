@@ -34,11 +34,11 @@
 }
 
 .dropdown-menu {
-    background-color: $absoluteWhite;
     overflow: hidden;
     transition: height 0.2s ease-out;
     height: 0px;
     &__navlinks {
+        background-color: $absoluteWhite;
         &__elt {
             &__link {
                 width: 100%;

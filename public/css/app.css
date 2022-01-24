@@ -235,10 +235,12 @@ body .hidden {
 }
 
 .dropdown-menu {
-  background-color: white;
   overflow: hidden;
   transition: height 0.2s ease-out;
   height: 0px;
+}
+.dropdown-menu__navlinks {
+  background-color: white;
 }
 .dropdown-menu__navlinks__elt {
   border-bottom: 3px solid #f3f4f6;

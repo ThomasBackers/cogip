@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,16 +16,24 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['auth']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::middleware(['auth', 'role:admin'])->group(function () {
-    route::get('/users', function () {
-        echo 'ADMIN';
-    });
-});
+Route::middleware(['auth', 'role:admin'])
+    ->group(function () {
+        route::get('/users', [UsersController::class, 'index']);
+
+        route::get('/users/{id}', [UsersController::class, 'show']);
+
+        route::put('/users/{id}', [UsersController::class, 'update']);
+
+        route::delete('/users/{id}', [UsersController::class, 'destroy']);
+
+        route::get('/users/{id}/edit', [UsersController::class, 'edit']);
+    }
+);
 
 require __DIR__.'/auth.php';
