@@ -203,7 +203,9 @@ body .hidden {
   background-color: #374151;
 }
 
-.company {
+.company,
+.contact,
+.invoices {
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 2px 5px #cccccc;
@@ -211,13 +213,17 @@ body .hidden {
   margin: 1rem auto;
   padding: 1.5rem;
 }
-.company__name {
+.company__name,
+.contact__name,
+.invoices__name {
   font-size: 1.3rem;
   font-weight: 700;
   padding-bottom: 1rem;
   position: relative;
 }
-.company__name::after {
+.company__name::after,
+.contact__name::after,
+.invoices__name::after {
   position: absolute;
   content: "";
   width: 100%;
@@ -227,7 +233,9 @@ body .hidden {
   bottom: 0;
   border-radius: 5px;
 }
-.company__data-list__element {
+.company__data-list__element,
+.contact__data-list__element,
+.invoices__data-list__element {
   padding-top: 0.75rem;
 }
 

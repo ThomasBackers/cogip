@@ -5,6 +5,53 @@
         </h1>
     </x-slot>
 
+    <section class="contacts">
+        <h2 class="contacts__heading">
+            <i class="fas fa-building"></i> last contacts
+        </h2>
+
+        @foreach ($contacts as $contact)
+            <div class="contact">
+                <h3 class="contact__name">
+                    {{ $contact->firstname }}
+                    {{ $contact->lastname }}
+                </h3>
+
+                <ul class="contact__data-list">
+                    <li class="contact__data-list__element">
+                        <h4 class="contact__data-list__element__heading">
+                            company:
+                        </h4>
+
+                        <p class="contact__data-list__element__data">
+                            {{ $contact->company->name }}
+                        </p>
+                    </li>
+
+                    <li class="contact__data-list__element">
+                        <h4 class="company__data-list__element__heading">
+                            email:
+                        </h4>
+
+                        <p class="contact__data-list__element__data">
+                            {{ $contact->email }}
+                        </p>
+                    </li>
+
+                    <li class="contact__data-list__element">
+                        <h4 class="contact__data-list__element__heading">
+                            phone:
+                        </h4>
+
+                        <p class="contact__data-list__element__data">
+                            {{ $contact->phone_number }}
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        @endforeach
+    </section>
+   
     <section class="companies">
         <h2 class="companies__heading">
             <i class="fas fa-building"></i> last companies
@@ -61,5 +108,5 @@
                 </ul>
             </div>
         @endforeach
-        </section>
+    </section>
 </x-app-layout>
