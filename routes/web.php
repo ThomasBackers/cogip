@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AppController;
 use App\Http\Controllers\UsersController;
 
 /*
@@ -14,15 +15,14 @@ use App\Http\Controllers\UsersController;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-})->middleware(['auth']);
+Route::get('/', [AppController::class, 'index'])
+    ->middleware(['auth']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [AppController::class, 'index'])
+    ->middleware(['auth'])
+    ->name('dashboard');
 
-Route::middleware(['auth', 'role:admin'])
+Route::middleware(['auth', 'role:admin', 'xsssanitizer'])
     ->group(function () {
         route::get('/users', [UsersController::class, 'index']);
 

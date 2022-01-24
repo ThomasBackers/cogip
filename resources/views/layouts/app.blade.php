@@ -21,15 +21,10 @@
     <body>
         @include('layouts.navigation')
 
-        <!-- Page Heading -->
-        <header>
-            <div>
-                {{ $header }}
-            </div>
-        </header>
-
-        <!-- Page Content -->
         <main class="main">
+            <!-- Page Heading -->
+            {{ $header }}
+            <!-- Page Content -->
             {{ $slot }}
         </main>
     </body>
