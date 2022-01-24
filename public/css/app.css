@@ -205,7 +205,7 @@ body .hidden {
 
 .company,
 .contact,
-.invoices {
+.invoice {
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 2px 5px #cccccc;
@@ -215,7 +215,7 @@ body .hidden {
 }
 .company__name,
 .contact__name,
-.invoices__name {
+.invoice__name {
   font-size: 1.3rem;
   font-weight: 700;
   padding-bottom: 1rem;
@@ -223,7 +223,7 @@ body .hidden {
 }
 .company__name::after,
 .contact__name::after,
-.invoices__name::after {
+.invoice__name::after {
   position: absolute;
   content: "";
   width: 100%;
@@ -235,7 +235,7 @@ body .hidden {
 }
 .company__data-list__element,
 .contact__data-list__element,
-.invoices__data-list__element {
+.invoice__data-list__element {
   padding-top: 0.75rem;
 }
 

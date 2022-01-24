@@ -22,8 +22,6 @@ class CreateInvoicesTable extends Migration
             // foreign keys
             $table->unsignedBigInteger('contact_id');
             $table->foreign('contact_id')->references('id')->on('contacts');
-            $table->unsignedBigInteger('company_id');
-            $table->foreign('company_id')->references('company_id')->on('contacts');
         });
     }
 
