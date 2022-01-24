@@ -10,6 +10,8 @@ class AppController extends Controller
     public function index()
     {
         return view('dashboard')
-            ->with('companies', Company::orderByRaw('coalesce(updated_at, created_at) DESC')->get());
+            ->with('companies', Company::orderByRaw('coalesce(updated_at, created_at) DESC')
+                ->limit(5)
+                ->get());
     }
 }
