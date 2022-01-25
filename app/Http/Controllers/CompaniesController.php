@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Company;
 
 class CompaniesController extends Controller
 {
@@ -13,7 +14,9 @@ class CompaniesController extends Controller
      */
     public function index()
     {
-        //
+        return view('companies.index')
+            ->with('companies', Company::orderBy('name')
+            ->get());
     }
 
     /**
@@ -45,7 +48,9 @@ class CompaniesController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('companies.show')
+            ->with('company', Company::where('id', $id)
+            ->first());
     }
 
     /**

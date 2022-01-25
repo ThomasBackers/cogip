@@ -287,6 +287,25 @@ body .hidden {
   color: #374151;
   padding-bottom: 0.2rem;
 }
+.company__data-list__links,
+.contact__data-list__links,
+.invoice__data-list__links {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.2rem;
+}
+.company__data-list__links__link,
+.contact__data-list__links__link,
+.invoice__data-list__links__link {
+  margin: 0 0.5rem;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  background-color: #1f2937;
+  border-radius: 5px;
+  padding: 0.4rem;
+  box-shadow: 0 2px 5px #cccccc;
+}
 
 .navigation {
   display: flex;

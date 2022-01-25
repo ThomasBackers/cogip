@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\CompaniesController;
+use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\InvoicesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +41,10 @@ Route::middleware(['auth', 'role:admin', 'xsssanitizer'])
 Route::middleware(['auth', 'xsssanitizer'])
     ->group(function () {
         Route::get('/companies', [CompaniesController::class, 'index']);
+
+        Route::get('/companies/suppliers', [CompaniesController::class, 'suppliers']);
+
+        Route::get('/companies/clients', [CompaniesController::class, 'clients']);
 
         Route::get('/companies/{id}', [CompaniesController::class, 'show']);
 

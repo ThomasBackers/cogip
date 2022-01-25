@@ -33,7 +33,7 @@
         </li>
 
         <li class="dropdown-menu__navlinks__elt">
-            <a class="dropdown-menu__navlinks__elt__link" href="/people">
+            <a class="dropdown-menu__navlinks__elt__link" href="/contacts">
                 contacts
             </a>
         </li>
