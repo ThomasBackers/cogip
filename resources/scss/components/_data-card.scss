@@ -1,10 +1,35 @@
+.header {
+    &__heading {
+        font-size: 1.7rem;
+        font-weight: 700;
+        padding: 1.3rem 0;
+        color: $cogipColor;
+    }
+}
+
+.companies,
+.contacts,
+.invoices {
+    &__heading {
+        font-size: 1.4rem;
+        padding: 1rem 0;
+        color: $activeBtnColor;
+        text-transform: capitalize;
+        font-weight: 500;
+
+        i {
+            margin-right: .3rem;
+        }
+    }
+}
+
 .company,
 .contact,
 .invoice {
     background-color: $absoluteWhite;
     border-radius: 10px;
     box-shadow: 0 2px 5px lighten(black, 80%);
-    width: 250px;
+    width: 90%;
     margin: 1rem auto;
     padding: 1.5rem;
 
@@ -28,6 +53,14 @@
     &__data-list {
         &__element {
             padding-top: .75rem;
+
+            &__heading {
+                font-size: .9rem;
+                text-transform: uppercase;
+                font-weight: 500;
+                color: $activeBtnColor;
+                padding-bottom: .2rem;
+            }
         }
     }
 }

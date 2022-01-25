@@ -203,13 +203,35 @@ body .hidden {
   background-color: #374151;
 }
 
+.header__heading {
+  font-size: 1.7rem;
+  font-weight: 700;
+  padding: 1.3rem 0;
+  color: #1f2937;
+}
+
+.companies__heading,
+.contacts__heading,
+.invoices__heading {
+  font-size: 1.4rem;
+  padding: 1rem 0;
+  color: #374151;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+.companies__heading i,
+.contacts__heading i,
+.invoices__heading i {
+  margin-right: 0.3rem;
+}
+
 .company,
 .contact,
 .invoice {
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 2px 5px #cccccc;
-  width: 250px;
+  width: 90%;
   margin: 1rem auto;
   padding: 1.5rem;
 }
@@ -237,6 +259,15 @@ body .hidden {
 .contact__data-list__element,
 .invoice__data-list__element {
   padding-top: 0.75rem;
+}
+.company__data-list__element__heading,
+.contact__data-list__element__heading,
+.invoice__data-list__element__heading {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #374151;
+  padding-bottom: 0.2rem;
 }
 
 .navigation {

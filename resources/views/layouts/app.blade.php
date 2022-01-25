@@ -21,7 +21,7 @@
     <body>
         @include('layouts.navigation')
 
-        <main class="main">
+        <main class="main container">
             <!-- Page Heading -->
             {{ $header }}
             <!-- Page Content -->
