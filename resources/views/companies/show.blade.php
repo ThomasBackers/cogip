@@ -103,6 +103,12 @@
                             {{ $contact->phone_number }}
                         </p>
                     </li>
+
+                    <li class="contact__data-list__links">
+                        <a href="/contacts/{{ $contact->id }}" class="contact__data-list__links__link">
+                            details
+                        </a>
+                    </li>
                 </ul>
             </div>
         @endforeach
@@ -128,6 +134,16 @@
 
                             <p class="invoice__data-list__element__data">
                                 {{ $invoice->contact->company->name }}
+                            </p>
+                        </li>
+
+                        <li class="invoice__data-list__element">
+                            <h4 class="invoice__data-list__element__heading">
+                                contact:
+                            </h4>
+    
+                            <p class="invoice__data-list__element__data">
+                                {{ $invoice->contact->firstname }} {{ $invoice->contact->lastname }}
                             </p>
                         </li>
 
@@ -166,6 +182,12 @@
                                 </p>
                             </li>
                         @endif
+
+                        <li class="invoice__data-list__links">
+                            <a href="/invoices/{{ $invoice->id }}" class="invoice__data-list__links__link">
+                                details
+                            </a>
+                        </li>
                     </ul>
                 </div>
             @endforeach
