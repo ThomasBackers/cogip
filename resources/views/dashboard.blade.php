@@ -119,6 +119,16 @@
             <i class="fas fa-building"></i> last companies
         </h2>
 
+        <div class="companies__links">
+            <a href="/companies/suppliers" class="companies__links__link">
+                suppliers
+            </a>
+
+            <a href="/companies/clients" class="companies__links__link">
+                clients
+            </a>
+        </div>
+
         @foreach ($companies as $company)
             <div class="company">
                 <h3 class="company__name">

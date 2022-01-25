@@ -224,6 +224,24 @@ body .hidden {
 .invoices__heading i {
   margin-right: 0.3rem;
 }
+.companies__links,
+.contacts__links,
+.invoices__links {
+  display: flex;
+  justify-content: center;
+}
+.companies__links__link,
+.contacts__links__link,
+.invoices__links__link {
+  margin: 0 0.5rem;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  background-color: #1f2937;
+  border-radius: 5px;
+  padding: 0.4rem;
+  box-shadow: 0 2px 5px #cccccc;
+}
 
 .company,
 .contact,
