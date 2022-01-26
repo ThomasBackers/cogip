@@ -61,11 +61,9 @@ class ContactsController extends Controller
      */
     public function edit($id)
     {
-        $arrayOfData = [
-            'group' => 'contacts',
-            'data' => Contact::where('id', $id)->first())
-        ]
-        return view('edit.form', $arrayOfData);
+        return view('edit.form')
+            ->with('group', 'contacts')
+            ->with('data', Contact::where('id', $id)->first());
     }
 
     /**

@@ -61,11 +61,9 @@ class InvoicesController extends Controller
      */
     public function edit($id)
     {
-        $arrayOfData = [
-            'group' => 'invoices',
-            'data' => Invoice::where('id', $id)->first())
-        ]
-        return view('edit.form', $arrayOfData);
+        return view('edit.form')
+            ->with('group', 'invoices')
+            ->with('data', Invoice::where('id', $id)->first());
     }
 
     /**
