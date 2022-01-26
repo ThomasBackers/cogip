@@ -1,0 +1,10 @@
+.editing {
+    &__form {
+        background-color: $absoluteWhite;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px lighten(black, 80%);
+        width: 90%;
+        margin: 1rem auto;
+        padding: 1.5rem;  
+    }
+}

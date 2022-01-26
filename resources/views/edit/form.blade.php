@@ -6,7 +6,7 @@
     </x-slot>
 
     <section class="editing">
-        <form action="" class="editing__form">
+        <form action="/{{ $group }}/{{ $data->id }}" class="editing__form">
             @csrf
             @method('PUT')
         </form>

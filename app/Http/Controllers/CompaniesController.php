@@ -61,7 +61,11 @@ class CompaniesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $arrayOfData = [
+            'group' => 'companies',
+            'data' => Company::where('id', $id)->first())
+        ]
+        return view('edit.form', $arrayOfData);
     }
 
     /**
