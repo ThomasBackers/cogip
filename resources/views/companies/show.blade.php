@@ -67,50 +67,7 @@
         </h2>
 
         @foreach ($company->contacts as $contact)
-            <div class="contact">
-                <h3 class="contact__name">
-                    {{ $contact->firstname }}
-                    {{ $contact->lastname }}
-                </h3>
-
-                <ul class="contact__data-list">
-                    <li class="contact__data-list__element">
-                        <h4 class="contact__data-list__element__heading">
-                            company:
-                        </h4>
-
-                        <p class="contact__data-list__element__data">
-                            {{ $contact->company->name }}
-                        </p>
-                    </li>
-
-                    <li class="contact__data-list__element">
-                        <h4 class="company__data-list__element__heading">
-                            email:
-                        </h4>
-
-                        <p class="contact__data-list__element__data">
-                            {{ $contact->email }}
-                        </p>
-                    </li>
-
-                    <li class="contact__data-list__element">
-                        <h4 class="contact__data-list__element__heading">
-                            phone:
-                        </h4>
-
-                        <p class="contact__data-list__element__data">
-                            {{ $contact->phone_number }}
-                        </p>
-                    </li>
-
-                    <li class="contact__data-list__links">
-                        <a href="/contacts/{{ $contact->id }}" class="contact__data-list__links__link">
-                            details
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            @include('components.contact')
         @endforeach
     </section>
 
@@ -121,75 +78,7 @@
 
         @foreach($company->contacts as $contact)
             @foreach ($contact->invoices as $invoice)
-                <div class="invoice">
-                    <h3 class="invoice__name">
-                        {{ $invoice->invoice_number }}
-                    </h3>
-
-                    <ul class="invoice__data-list">
-                        <li class="invoice__data-list__element">
-                            <h4 class="invoice__data-list__element__heading">
-                                company:
-                            </h4>
-
-                            <p class="invoice__data-list__element__data">
-                                {{ $invoice->contact->company->name }}
-                            </p>
-                        </li>
-
-                        <li class="invoice__data-list__element">
-                            <h4 class="invoice__data-list__element__heading">
-                                contact:
-                            </h4>
-    
-                            <p class="invoice__data-list__element__data">
-                                {{ $invoice->contact->firstname }} {{ $invoice->contact->lastname }}
-                            </p>
-                        </li>
-
-                        <li class="invoice__data-list__element">
-                            <h4 class="invoice__data-list__element__heading">
-                                amount:
-                            </h4>
-
-                            <p class="invoice__data-list__element__data">
-                                {{ $invoice->amount }}€
-                            </p>
-                        </li>
-
-                        <li class="invoice__data-list__element">
-                            <h4 class="invoice__data-list__element__heading">
-                                status:
-                            </h4>
-
-                            <p class="invoice__data-list__element__data">
-                                @if ($invoice->outstanding_balance == 0)
-                                    paid
-                                @else
-                                    pending
-                                @endif
-                            </p>
-                        </li>
-
-                        @if ($invoice->outstanding_balance != 0)
-                            <li class="invoice__data-list__element">
-                                <h4 class="invoice__data-list__element__heading">
-                                    outstanding balance:
-                                </h4>
-
-                                <p class="invoice__data-list__element__data">
-                                    {{ $invoice->outstanding_balance }}€
-                                </p>
-                            </li>
-                        @endif
-
-                        <li class="invoice__data-list__links">
-                            <a href="/invoices/{{ $invoice->id }}" class="invoice__data-list__links__link">
-                                details
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                @include('components.invoice')
             @endforeach
         @endforeach
     </section>

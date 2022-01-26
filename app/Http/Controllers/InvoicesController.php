@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Invoice;
 
 class InvoicesController extends Controller
 {
@@ -13,7 +14,9 @@ class InvoicesController extends Controller
      */
     public function index()
     {
-        //
+        return view('invoices.index')
+            ->with('invoices', Invoice::orderByRaw('coalesce(updated_at, created_at) DESC')
+            ->get());
     }
 
     /**
