@@ -7,7 +7,7 @@
 
     <section class="invoices">
         <h2 class="invoices__heading">
-            <i class="fas fa-file-invoice-dollar"></i> last invoices
+            <i class="fas fa-file-invoice-dollar"></i> all invoices
         </h2>
 
         @foreach ($invoices as $invoice)

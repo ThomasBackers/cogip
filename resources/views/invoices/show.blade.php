@@ -18,16 +18,6 @@
             <ul class="invoice__data-list">
                 <li class="invoice__data-list__element">
                     <h4 class="invoice__data-list__element__heading">
-                        company:
-                    </h4>
-        
-                    <p class="invoice__data-list__element__data">
-                        {{ $invoice->contact->company->name }}
-                    </p>
-                </li>
-        
-                <li class="invoice__data-list__element">
-                    <h4 class="invoice__data-list__element__heading">
                         amount:
                     </h4>
         
