@@ -48,7 +48,9 @@ class ContactsController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('contacts.show')
+            ->with('contact', Contact::where('id', $id)
+            ->first());
     }
 
     /**

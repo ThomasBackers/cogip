@@ -48,7 +48,9 @@ class InvoicesController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('invoices.show')
+            ->with('invoice', Invoice::where('id', $id)
+            ->first());
     }
 
     /**
