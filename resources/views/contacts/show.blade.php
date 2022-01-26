@@ -55,6 +55,24 @@
                         {{ $contact->phone_number }}
                     </p>
                 </li>
+
+                @if (Auth::user()->hasRole('editor'))
+                    <li class="contact__data-list__links">
+                        <a href="/contacts/{{ $contact->id }}/edit" class="invoice__data-list__links__link">
+                            update
+                        </a>
+
+                        
+                        <form action="/contacts/{{ $contact->id }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+
+                            <button type="submit" class="invoice__data-list__links__link del">
+                                delete
+                            </button>
+                        </form>
+                    </li>
+                @endif
             </ul>
         </div>
     </section>    
@@ -116,6 +134,21 @@
                     <a href="/companies/{{ $contact->company->id }}" class="company__data-list__links__link">
                         details
                     </a>
+
+                    @if (Auth::user()->hasRole('editor'))
+                        <a href="/companies/{{ $contact->company->id }}/edit" class="invoice__data-list__links__link">
+                            update
+                        </a>
+
+                        <form action="/companies/{{ $contact->company->id }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+
+                            <button type="submit" class="invoice__data-list__links__link del">
+                                delete
+                            </button>
+                        </form>
+                    @endif
                 </li>
             </ul>
         </div>

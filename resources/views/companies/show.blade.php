@@ -57,6 +57,24 @@
                         {{ $company->category }}
                     </p>
                 </li>
+
+                @if (Auth::user()->hasRole('editor'))
+                    <li class="contact__data-list__links">
+                        <a href="/company/{{ $company->id }}/edit" class="invoice__data-list__links__link">
+                            update
+                        </a>
+
+                        
+                        <form action="/company/{{ $company->id }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+
+                            <button type="submit" class="invoice__data-list__links__link del">
+                                delete
+                            </button>
+                        </form>
+                    </li>
+                @endif
             </ul>
         </div>
     </section>

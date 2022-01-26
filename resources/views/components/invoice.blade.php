@@ -74,6 +74,21 @@
             <a href="/invoices/{{ $invoice->id }}" class="invoice__data-list__links__link">
                 details
             </a>
+
+            @if (Auth::user()->hasRole('editor'))
+                <a href="/invoices/{{ $invoice->id }}/edit" class="invoice__data-list__links__link">
+                    update
+                </a>
+
+                <form action="/invoices/{{ $invoice->id }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+
+                    <button type="submit" class="invoice__data-list__links__link del">
+                        delete
+                    </button>
+                </form>
+            @endif
         </li>
     </ul>
 </div>

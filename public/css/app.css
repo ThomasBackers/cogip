@@ -89,6 +89,9 @@ body .container {
 body a {
   display: inline-block;
 }
+body button {
+  cursor: pointer;
+}
 body .hidden {
   display: none;
 }
@@ -102,7 +105,7 @@ body .hidden {
   max-width: 100%;
 }
 .validation-errors__errors__error {
-  background-color: #dc2626;
+  background-color: #b91c1c;
   color: white;
   font-weight: 500;
   padding: 0.5rem 0;
@@ -305,6 +308,11 @@ body .hidden {
   border-radius: 5px;
   padding: 0.4rem;
   box-shadow: 0 2px 5px #cccccc;
+}
+.company__data-list__links .del,
+.contact__data-list__links .del,
+.invoice__data-list__links .del {
+  background-color: #b91c1c;
 }
 
 .navigation {

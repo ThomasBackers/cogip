@@ -63,13 +63,19 @@ Route::middleware(['auth', 'role:editor', 'xsssanitizer'])
 
         Route::put('companies/{id}', [CompaniesController::class, 'update']);
 
+        Route::delete('companies/{id}', [CompaniesController::class, 'delete']);
+
         Route::get('contacts/{id}/edit', [ContactsController::class, 'edit']);
 
         Route::put('contacts/{id}', [ContactsController::class, 'update']);
 
+        Route::delete('contacts/{id}', [ContactsController::class, 'delete']);
+
         Route::get('invoices/{id}/edit', [InvoicesController::class, 'edit']);
 
         Route::put('invoices/{id}', [InvoicesController::class, 'update']);
+
+        Route::delete('invoices/{id}', [InvoicesController::class, 'delete']);
     });
 
 require __DIR__.'/auth.php';

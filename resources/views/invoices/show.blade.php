@@ -59,6 +59,24 @@
                         {{ str_split($invoice->created_at, 10)[0] }}
                     </p>
                 </li>
+
+                @if (Auth::user()->hasRole('editor'))
+                    <li class="contact__data-list__links">
+                        <a href="/invoices/{{ $invoice->id }}/edit" class="invoice__data-list__links__link">
+                            update
+                        </a>
+
+                        
+                        <form action="/invoices/{{ $invoice->id }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+
+                            <button type="submit" class="invoice__data-list__links__link del">
+                                delete
+                            </button>
+                        </form>
+                    </li>
+                @endif
             </ul>
         </div>        
     </section>
@@ -99,6 +117,22 @@
                     <a href="/contacts/{{ $invoice->contact->id }}" class="contact__data-list__links__link">
                         details
                     </a>
+
+                    @if (Auth::user()->hasRole('editor'))
+                        <a href="/contacts/{{ $invoice->contact->id }}/edit" class="invoice__data-list__links__link">
+                            update
+                        </a>
+
+                        
+                        <form action="/contacts/{{ $invoice->contact->id }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+
+                            <button type="submit" class="invoice__data-list__links__link del">
+                                delete
+                            </button>
+                        </form>
+                    @endif
                 </li>
             </ul>
         </div>
@@ -161,6 +195,22 @@
                     <a href="/companies/{{ $invoice->contact->company->id }}" class="company__data-list__links__link">
                         details
                     </a>
+
+                    @if (Auth::user()->hasRole('editor'))
+                        <a href="/companies/{{ $invoice->contact->company->id }}/edit" class="invoice__data-list__links__link">
+                            update
+                        </a>
+
+                        
+                        <form action="/companies/{{ $invoice->contact->company->id }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+
+                            <button type="submit" class="invoice__data-list__links__link del">
+                                delete
+                            </button>
+                        </form>
+                    @endif
                 </li>
             </ul>
         </div>

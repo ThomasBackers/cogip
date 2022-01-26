@@ -50,6 +50,21 @@
             <a href="/companies/{{ $company->id }}" class="company__data-list__links__link">
                 details
             </a>
+
+            @if (Auth::user()->hasRole('editor'))
+                <a href="/companies/{{ $company->id }}/edit" class="invoice__data-list__links__link">
+                    update
+                </a>
+
+                <form action="/companies/{{ $company->id }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+
+                    <button type="submit" class="invoice__data-list__links__link del">
+                        delete
+                    </button>
+                </form>
+            @endif
         </li>
     </ul>
 </div>
