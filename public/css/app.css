@@ -315,6 +315,15 @@ body .hidden {
   background-color: #b91c1c;
 }
 
+.editing__form {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px #cccccc;
+  width: 90%;
+  margin: 1rem auto;
+  padding: 1.5rem;
+}
+
 .navigation {
   display: flex;
   background-color: #1f2937;
