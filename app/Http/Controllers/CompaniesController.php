@@ -62,6 +62,7 @@ class CompaniesController extends Controller
     public function edit($id)
     {
         return view('edit.form')
+            ->with('type', 'Editing')
             ->with('group', 'companies')
             ->with('data', Company::where('id', $id)->first());
     }

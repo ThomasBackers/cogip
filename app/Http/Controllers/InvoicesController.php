@@ -62,6 +62,7 @@ class InvoicesController extends Controller
     public function edit($id)
     {
         return view('edit.form')
+            ->with('type', 'Editing')
             ->with('group', 'invoices')
             ->with('data', Invoice::where('id', $id)->first());
     }

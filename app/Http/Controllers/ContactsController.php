@@ -62,6 +62,7 @@ class ContactsController extends Controller
     public function edit($id)
     {
         return view('edit.form')
+            ->with('type', 'Editing')
             ->with('group', 'contacts')
             ->with('data', Contact::where('id', $id)->first());
     }
