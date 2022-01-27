@@ -61,7 +61,7 @@ Route::middleware(['auth', 'xsssanitizer'])
 
 Route::middleware(['auth', 'role:editor', 'xsssanitizer'])
     ->group(function () {
-        Route::get('companies/create/form', [CompaniesController::class, 'create']);
+        Route::get('/create/company', [CompaniesController::class, 'create']);
         
         Route::get('/companies/{id}/edit', [CompaniesController::class, 'edit']);
 
@@ -69,7 +69,7 @@ Route::middleware(['auth', 'role:editor', 'xsssanitizer'])
 
         Route::delete('/companies/{id}', [CompaniesController::class, 'delete']);
 
-        Route::get('/contacts/create/form', [ContactsController::class, 'create']);
+        Route::get('/create/contact', [ContactsController::class, 'create']);
         
         Route::get('/contacts/{id}/edit', [ContactsController::class, 'edit']);
 
@@ -77,7 +77,7 @@ Route::middleware(['auth', 'role:editor', 'xsssanitizer'])
 
         Route::delete('/contacts/{id}', [ContactsController::class, 'delete']);
 
-        Route::get('/invoices/create/form', [InvoicesController::class, 'create']);
+        Route::get('/create/invoice', [InvoicesController::class, 'create']);
         
         Route::get('/invoices/{id}/edit', [InvoicesController::class, 'edit']);
 
