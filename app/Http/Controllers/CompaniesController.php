@@ -26,7 +26,9 @@ class CompaniesController extends Controller
      */
     public function create()
     {
-        //
+        return view('edit.form')
+            ->with('type', 'Create')
+            ->with('group', 'companies');
     }
 
     /**

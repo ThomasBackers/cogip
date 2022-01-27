@@ -36,6 +36,8 @@ Route::middleware(['auth', 'role:admin', 'xsssanitizer'])
         Route::delete('/users/{id}', [UsersController::class, 'destroy']);
 
         Route::get('/users/{id}/edit', [UsersController::class, 'edit']);
+
+        Route::get('/users/create', [UsersController::class, 'create']);
     });
 
 Route::middleware(['auth', 'xsssanitizer'])
@@ -59,23 +61,29 @@ Route::middleware(['auth', 'xsssanitizer'])
 
 Route::middleware(['auth', 'role:editor', 'xsssanitizer'])
     ->group(function () {
-        Route::get('companies/{id}/edit', [CompaniesController::class, 'edit']);
+        Route::get('companies/create/form', [CompaniesController::class, 'create']);
+        
+        Route::get('/companies/{id}/edit', [CompaniesController::class, 'edit']);
 
-        Route::put('companies/{id}', [CompaniesController::class, 'update']);
+        Route::put('/companies/{id}', [CompaniesController::class, 'update']);
 
-        Route::delete('companies/{id}', [CompaniesController::class, 'delete']);
+        Route::delete('/companies/{id}', [CompaniesController::class, 'delete']);
 
-        Route::get('contacts/{id}/edit', [ContactsController::class, 'edit']);
+        Route::get('/contacts/create/form', [ContactsController::class, 'create']);
+        
+        Route::get('/contacts/{id}/edit', [ContactsController::class, 'edit']);
 
-        Route::put('contacts/{id}', [ContactsController::class, 'update']);
+        Route::put('/contacts/{id}', [ContactsController::class, 'update']);
 
-        Route::delete('contacts/{id}', [ContactsController::class, 'delete']);
+        Route::delete('/contacts/{id}', [ContactsController::class, 'delete']);
 
-        Route::get('invoices/{id}/edit', [InvoicesController::class, 'edit']);
+        Route::get('/invoices/create/form', [InvoicesController::class, 'create']);
+        
+        Route::get('/invoices/{id}/edit', [InvoicesController::class, 'edit']);
 
-        Route::put('invoices/{id}', [InvoicesController::class, 'update']);
+        Route::put('/invoices/{id}', [InvoicesController::class, 'update']);
 
-        Route::delete('invoices/{id}', [InvoicesController::class, 'delete']);
+        Route::delete('/invoices/{id}', [InvoicesController::class, 'delete']);
     });
 
 require __DIR__.'/auth.php';

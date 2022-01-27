@@ -8,7 +8,11 @@
     <section class="editing">
         <form
         class="editing__form"
-        action="/{{ $group }}/{{ $data->id }}"
+        @if ($type === 'Editing')
+            action="/{{ $group }}/{{ $data->id }}"
+        @elseif ($type === 'Create')
+            action=""
+        @endif
         method="POST"
         >
             @csrf
@@ -18,7 +22,11 @@
 
             @if ($group === 'companies')
                 <h3 class="editing__form__heading">
-                    {{ $data->name }}
+                    @if ($type === 'Editing')
+                        {{ $data->name }}
+                    @else
+                        New Entry
+                    @endif
                 </h3>
                 
                 <input
@@ -84,7 +92,7 @@
                 >
                     <option
                     value="client"
-                    @if ($data->category === 'client')
+                    @if ($type === 'Editing' && $data->category === 'client')
                         selected="selected"
                     @endif
                     >
@@ -93,7 +101,7 @@
 
                     <option
                     value="supplier"
-                    @if ($data->category === 'supplier')
+                    @if ($type === 'Editing' && $data->category === 'supplier')
                         selected="selected"
                     @endif
                     >
@@ -103,7 +111,11 @@
 
             @elseif ($group === 'contacts')
                 <h3 class="editing__form__heading">
-                    {{ $data->firstname }} {{ $data->lastname }}
+                    @if ($type === 'Editing')
+                        {{ $data->firstname }} {{ $data->lastname }}
+                    @elseif ($type === 'Create')
+                        New Entry
+                    @endif
                 </h3>
 
                 <input
@@ -154,9 +166,13 @@
 
             @elseif ($group === 'invoices')
                 <h3 class="editing__form__heading">
-                    {{ $data->invoice_number }}
+                    @if ($type === 'Editing')
+                        {{ $data->invoice_number }}
+                    @else
+                        New Entry
+                    @endif
                 </h3>
-            
+
                 <input
                 class="editing__form__input"
                 type="text"
