@@ -37,7 +37,7 @@ Route::middleware(['auth', 'role:admin', 'xsssanitizer'])
 
         Route::get('/users/{id}/edit', [UsersController::class, 'edit']);
 
-        Route::get('/users/create', [UsersController::class, 'create']);
+        Route::get('/users/create/form', [UsersController::class, 'create']);
     });
 
 Route::middleware(['auth', 'xsssanitizer'])
