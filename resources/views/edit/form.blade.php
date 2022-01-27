@@ -17,6 +17,10 @@
             @endif
 
             @if ($group === 'companies')
+                <h3 class="editing__form__heading">
+                    {{ $data->name }}
+                </h3>
+                
                 <input
                 class="editing__form__input"
                 type="text"
@@ -74,15 +78,6 @@
                 @endif
                 >
 
-                <input
-                class="editing__form__input"
-                type="text"
-                name="name"
-                @if ($type === 'Editing')
-                    value="{{ $data->name }}"
-                @endif
-                >
-
                 <select
                 class="editing__form__input"
                 name="category"
@@ -107,6 +102,10 @@
                 </select>
 
             @elseif ($group === 'contacts')
+                <h3 class="editing__form__heading">
+                    {{ $data->firstname }} {{ $data->lastname }}
+                </h3>
+            
                 <input
                 class="editing__form__input"
                 type="text"
@@ -154,6 +153,10 @@
                 >
 
             @elseif ($group === 'invoices')
+                <h3 class="editing__form__heading">
+                    {{ $data->invoice_number }}
+                </h3>
+            
                 <input
                 class="editing__form__input"
                 type="text"
@@ -197,6 +200,15 @@
                 >
 
             @endif
+
+            <div class="editing__form__buttons">
+                <button
+                class="editing__form__buttons__button"
+                type="submit"
+                >
+                    submit
+                </button>
+            </div>
         </form>
     </section>
 </x-app-layout>

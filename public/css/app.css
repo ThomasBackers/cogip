@@ -323,6 +323,46 @@ body .hidden {
   margin: 1rem auto;
   padding: 1.5rem;
 }
+.editing__form__heading {
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
+  margin-bottom: 1.75rem;
+  position: relative;
+}
+.editing__form__heading::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 5px;
+  background-color: #1f2937;
+  left: 0;
+  bottom: 0;
+  border-radius: 5px;
+}
+.editing__form__input {
+  border: 1px solid #b8bdc6;
+  box-shadow: 0 1px 1px #e6e6e6;
+  padding: 0.75rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 7px;
+}
+.editing__form__buttons {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.4rem;
+}
+.editing__form__buttons__button {
+  margin: 0 0.5rem;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  background-color: #1f2937;
+  border-radius: 5px;
+  padding: 0.4rem;
+  box-shadow: 0 2px 5px #cccccc;
+}
 
 .navigation {
   display: flex;
