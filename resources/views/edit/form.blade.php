@@ -105,7 +105,7 @@
                 <h3 class="editing__form__heading">
                     {{ $data->firstname }} {{ $data->lastname }}
                 </h3>
-            
+
                 <input
                 class="editing__form__input"
                 type="text"

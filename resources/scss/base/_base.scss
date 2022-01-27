@@ -1,6 +1,8 @@
 body {
     min-height: 100vh;
     background-color: $backgroundColor;
+    display: flex;
+    flex-direction: column;
 
     main {
         display: flex;
@@ -8,10 +10,6 @@ body {
 
     .main {
         flex-direction: column;
-    }
-
-    .guest {
-        min-height: 100vh;
     }
 
     .auth-content {
@@ -34,5 +32,11 @@ body {
 
     .hidden {
         display: none;
+    }
+
+    .footer {
+        margin-top: auto;
+        padding: 1.5rem 0;
+        text-align: center;
     }
 }

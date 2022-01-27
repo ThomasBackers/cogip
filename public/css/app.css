@@ -68,15 +68,14 @@ textarea {
 body {
   min-height: 100vh;
   background-color: #f3f4f6;
+  display: flex;
+  flex-direction: column;
 }
 body main {
   display: flex;
 }
 body .main {
   flex-direction: column;
-}
-body .guest {
-  min-height: 100vh;
 }
 body .auth-content {
   margin: auto;
@@ -94,6 +93,11 @@ body button {
 }
 body .hidden {
   display: none;
+}
+body .footer {
+  margin-top: auto;
+  padding: 1.5rem 0;
+  text-align: center;
 }
 
 .validation-errors {
