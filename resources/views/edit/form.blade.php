@@ -37,8 +37,8 @@
 
                 <input
                 class="editing__form__input"
-                type="text"
-                name="number"
+                type="number"
+                name="zip_code"
                 min="1000"
                 max="99999"
                 step="1"
@@ -154,6 +154,47 @@
                 >
 
             @elseif ($group === 'invoices')
+                <input
+                class="editing__form__input"
+                type="text"
+                name="invoice_number"
+                @if ($type === 'Editing')
+                    value="{{ $data->invoice_number }}"
+                @endif
+                >
+
+                <input
+                class="editing__form__input"
+                type="number"
+                name="amount"
+                min="0.1"
+                max="999999.99"
+                step="0.1"
+                @if ($type === 'Editing')
+                    value="{{ $data->amount }}"
+                @endif
+                >
+
+                <input
+                class="editing__form__input"
+                type="number"
+                name="outstanding_balance"
+                min="0"
+                max="999999.99"
+                step="0.1"
+                @if ($type === 'Editing')
+                    value="{{ $data->outstanding_balance }}"
+                @endif
+                >
+
+                <input
+                class="editing__form__input"
+                type="text"
+                name="contact_lastname"
+                @if ($type === 'Editing')
+                    value="{{ $data->contact->lastname }}"
+                @endif
+                >
 
             @endif
         </form>
