@@ -49,7 +49,7 @@ class CompaniesController extends Controller
             'category' => 'required'
         ]);
 
-        Post::create([
+        Company::create([
             'name' => $request->input('name'),
             'address' => $request->input('address'),
             'zip_code' => $request->input('zip_code'),
@@ -58,6 +58,8 @@ class CompaniesController extends Controller
             'vat_number' => $request->input('vat_number'),
             'category' => $request->input('category')
         ]);
+
+        return redirect('/dashboard')->with('message', 'The company has been added');
     }
 
     /**

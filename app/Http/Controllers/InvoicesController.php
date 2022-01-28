@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Invoice;
+use App\Models\Contact;
 
 class InvoicesController extends Controller
 {
@@ -39,7 +40,26 @@ class InvoicesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'invoice_number' => 'required',
+            'amount' => 'required',
+            'outstanding_balance' => 'required',
+            'contact_lastname' => 'required'
+        ]);
+
+        $contact = Contact::where('lastname', $request->input('contact_lastname'))->first();
+        if ($contact === null) {
+            return back()->with('error', 'the specified contact does not exist');
+        }
+
+        Invoice::create([
+            'invoice_number' => $request->input('invoice_number'),
+            'amount' => $request->input('amount'),
+            'outstanding_balance' => $request->input('outstanding_balance'),
+            'contact_id' => $contact->id
+        ]);
+
+        return redirect('/dashboard')->with('message', 'The invoice has been added');
     }
 
     /**

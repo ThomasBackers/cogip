@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use App\Models\Company;
 
 class ContactsController extends Controller
 {
@@ -39,7 +40,28 @@ class ContactsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'email' => 'required',
+            'phone_number' => 'required',
+            'company' => 'required'
+        ]);
+        
+        $company = Company::where('name', $request->input('company'))->first();
+        if ($company === null) {
+            return back()->with('error', 'the specified company does not exist');
+        }
+
+        Contact::create([
+            'firstname' => $request->input('firstname'),
+            'lastname' => $request->input('lastname'),
+            'email' => $request->input('email'),
+            'phone_number' => $request->input('phone_number'),
+            'company_id' => $company->id
+        ]);
+
+        return redirect('/dashboard')->with('message', 'The contact has been added');
     }
 
     /**
