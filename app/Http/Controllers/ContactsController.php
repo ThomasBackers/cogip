@@ -111,6 +111,7 @@ class ContactsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Contact::where('id', $id)->delete();
+        return redirect('/contacts')->with('message', 'The contact has been deleted');
     }
 }

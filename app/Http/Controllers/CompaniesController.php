@@ -109,6 +109,7 @@ class CompaniesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Company::where('id', $id)->delete();
+        return redirect('/companies')->with('message', 'The company has been deleted');
     }
 }

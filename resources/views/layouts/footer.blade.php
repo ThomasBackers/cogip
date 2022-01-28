@@ -1,3 +1,3 @@
 <footer class="footer">
-    &copy; 2021 - vive la COGIP!
+    &copy; 2022 - vive la COGIP!
 </footer>

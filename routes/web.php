@@ -54,36 +54,40 @@ Route::middleware(['auth', 'xsssanitizer'])
 
         Route::get('/companies/{id}', [CompaniesController::class, 'show'])
             ->where(['id' => '[0-9]+']);
+        
+        Route::get('/companies/create', [CompaniesController::class, 'create']);
+
+        Route::post('/companies/create', [CompaniesController::class, 'store']);
 
         Route::get('/contacts', [ContactsController::class, 'index']);
 
         Route::get('/contacts/{id}', [ContactsController::class, 'show'])
             ->where(['id' => '[0-9]+']);
 
+        Route::get('/contacts/create', [ContactsController::class, 'create']);
+
+        Route::post('/contacts/create', [CompaniesController::class, 'store']);
+
         Route::get('/invoices', [InvoicesController::class, 'index']);
 
         Route::get('/invoices/{id}', [InvoicesController::class, 'show'])
             ->where(['id' => '[0-9]+']);
+        
+        Route::get('/invoices/create', [InvoicesController::class, 'create']);
+
+        Route::post('/invoices/create', [CompaniesController::class, 'store']);
     });
 
 Route::middleware(['auth', 'role:editor', 'xsssanitizer'])
     ->group(function () {
-        Route::get('/companies/create', [CompaniesController::class, 'create']);
-
-        Route::post('/companies/create', [CompaniesController::class, 'store']);
-        
         Route::get('/companies/{id}/edit', [CompaniesController::class, 'edit'])
             ->where(['id' => '[0-9]+']);
 
         Route::put('/companies/{id}', [CompaniesController::class, 'update'])
             ->where(['id' => '[0-9]+']);
 
-        Route::delete('/companies/{id}', [CompaniesController::class, 'delete'])
+        Route::delete('/companies/{id}', [CompaniesController::class, 'destroy'])
             ->where(['id' => '[0-9]+']);
-
-        Route::get('/contacts/create', [ContactsController::class, 'create']);
-
-        Route::post('/contacts/create', [CompaniesController::class, 'store']);
         
         Route::get('/contacts/{id}/edit', [ContactsController::class, 'edit'])
             ->where(['id' => '[0-9]+']);
@@ -91,12 +95,8 @@ Route::middleware(['auth', 'role:editor', 'xsssanitizer'])
         Route::put('/contacts/{id}', [ContactsController::class, 'update'])
             ->where(['id' => '[0-9]+']);
 
-        Route::delete('/contacts/{id}', [ContactsController::class, 'delete'])
+        Route::delete('/contacts/{id}', [ContactsController::class, 'destroy'])
             ->where(['id' => '[0-9]+']);
-
-        Route::get('/invoices/create', [InvoicesController::class, 'create']);
-
-        Route::post('/invoices/create', [CompaniesController::class, 'store']);
         
         Route::get('/invoices/{id}/edit', [InvoicesController::class, 'edit'])
             ->where(['id' => '[0-9]+']);
@@ -104,7 +104,7 @@ Route::middleware(['auth', 'role:editor', 'xsssanitizer'])
         Route::put('/invoices/{id}', [InvoicesController::class, 'update'])
             ->where(['id' => '[0-9]+']);
 
-        Route::delete('/invoices/{id}', [InvoicesController::class, 'delete'])
+        Route::delete('/invoices/{id}', [InvoicesController::class, 'destroy'])
             ->where(['id' => '[0-9]+']);
     });
 
