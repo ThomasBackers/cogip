@@ -8,6 +8,10 @@ body {
         display: flex;
     }
 
+    .guest {
+        min-height: 100vh;
+    }
+
     .main {
         flex-direction: column;
     }

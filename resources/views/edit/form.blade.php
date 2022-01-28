@@ -158,7 +158,7 @@
                 class="editing__form__input"
                 type="tel"
                 name="phone_number"
-                pattern="[0-9]{10}"
+                pattern="[0-9]+"
                 @if ($type === 'Editing')
                     value="{{ $data->phone_number }}"
                 @endif

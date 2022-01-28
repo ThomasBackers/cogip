@@ -29,13 +29,17 @@ Route::middleware(['auth', 'role:admin', 'xsssanitizer'])
     ->group(function () {
         Route::get('/users', [UsersController::class, 'index']);
 
-        Route::get('/users/{id}', [UsersController::class, 'show']);
+        Route::get('/users/{id}', [UsersController::class, 'show'])
+            ->where(['id' => '[0-9]+']);
 
-        Route::put('/users/{id}', [UsersController::class, 'update']);
+        Route::put('/users/{id}', [UsersController::class, 'update'])
+            ->where(['id' => '[0-9]+']);
 
-        Route::delete('/users/{id}', [UsersController::class, 'destroy']);
+        Route::delete('/users/{id}', [UsersController::class, 'destroy'])
+            ->where(['id' => '[0-9]+']);
 
-        Route::get('/users/{id}/edit', [UsersController::class, 'edit']);
+        Route::get('/users/{id}/edit', [UsersController::class, 'edit'])
+            ->where(['id' => '[0-9]+']);
 
         Route::get('/users/create/form', [UsersController::class, 'create']);
     });
@@ -48,42 +52,54 @@ Route::middleware(['auth', 'xsssanitizer'])
 
         Route::get('/companies/clients', [CompaniesController::class, 'clients']);
 
-        Route::get('/companies/{id}', [CompaniesController::class, 'show']);
+        Route::get('/companies/{id}', [CompaniesController::class, 'show'])
+            ->where(['id' => '[0-9]+']);
 
         Route::get('/contacts', [ContactsController::class, 'index']);
 
-        Route::get('/contacts/{id}', [ContactsController::class, 'show']);
+        Route::get('/contacts/{id}', [ContactsController::class, 'show'])
+            ->where(['id' => '[0-9]+']);
 
         Route::get('/invoices', [InvoicesController::class, 'index']);
 
-        Route::get('/invoices/{id}', [InvoicesController::class, 'show']);
+        Route::get('/invoices/{id}', [InvoicesController::class, 'show'])
+            ->where(['id' => '[0-9]+']);
     });
 
 Route::middleware(['auth', 'role:editor', 'xsssanitizer'])
     ->group(function () {
-        Route::get('/create/company', [CompaniesController::class, 'create']);
+        Route::get('/companies/create', [CompaniesController::class, 'create']);
         
-        Route::get('/companies/{id}/edit', [CompaniesController::class, 'edit']);
+        Route::get('/companies/{id}/edit', [CompaniesController::class, 'edit'])
+            ->where(['id' => '[0-9]+']);
 
-        Route::put('/companies/{id}', [CompaniesController::class, 'update']);
+        Route::put('/companies/{id}', [CompaniesController::class, 'update'])
+            ->where(['id' => '[0-9]+']);
 
-        Route::delete('/companies/{id}', [CompaniesController::class, 'delete']);
+        Route::delete('/companies/{id}', [CompaniesController::class, 'delete'])
+            ->where(['id' => '[0-9]+']);
 
-        Route::get('/create/contact', [ContactsController::class, 'create']);
+        Route::get('/contacts/create', [ContactsController::class, 'create']);
         
-        Route::get('/contacts/{id}/edit', [ContactsController::class, 'edit']);
+        Route::get('/contacts/{id}/edit', [ContactsController::class, 'edit'])
+            ->where(['id' => '[0-9]+']);
 
-        Route::put('/contacts/{id}', [ContactsController::class, 'update']);
+        Route::put('/contacts/{id}', [ContactsController::class, 'update'])
+            ->where(['id' => '[0-9]+']);
 
-        Route::delete('/contacts/{id}', [ContactsController::class, 'delete']);
+        Route::delete('/contacts/{id}', [ContactsController::class, 'delete'])
+            ->where(['id' => '[0-9]+']);
 
-        Route::get('/create/invoice', [InvoicesController::class, 'create']);
+        Route::get('/invoices/create', [InvoicesController::class, 'create']);
         
-        Route::get('/invoices/{id}/edit', [InvoicesController::class, 'edit']);
+        Route::get('/invoices/{id}/edit', [InvoicesController::class, 'edit'])
+            ->where(['id' => '[0-9]+']);
 
-        Route::put('/invoices/{id}', [InvoicesController::class, 'update']);
+        Route::put('/invoices/{id}', [InvoicesController::class, 'update'])
+            ->where(['id' => '[0-9]+']);
 
-        Route::delete('/invoices/{id}', [InvoicesController::class, 'delete']);
+        Route::delete('/invoices/{id}', [InvoicesController::class, 'delete'])
+            ->where(['id' => '[0-9]+']);
     });
 
 require __DIR__.'/auth.php';
