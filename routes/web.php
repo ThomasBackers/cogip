@@ -69,6 +69,8 @@ Route::middleware(['auth', 'xsssanitizer'])
 Route::middleware(['auth', 'role:editor', 'xsssanitizer'])
     ->group(function () {
         Route::get('/companies/create', [CompaniesController::class, 'create']);
+
+        Route::post('/companies/create', [CompaniesController::class, 'store']);
         
         Route::get('/companies/{id}/edit', [CompaniesController::class, 'edit'])
             ->where(['id' => '[0-9]+']);
@@ -80,6 +82,8 @@ Route::middleware(['auth', 'role:editor', 'xsssanitizer'])
             ->where(['id' => '[0-9]+']);
 
         Route::get('/contacts/create', [ContactsController::class, 'create']);
+
+        Route::post('/contacts/create', [CompaniesController::class, 'store']);
         
         Route::get('/contacts/{id}/edit', [ContactsController::class, 'edit'])
             ->where(['id' => '[0-9]+']);
@@ -91,6 +95,8 @@ Route::middleware(['auth', 'role:editor', 'xsssanitizer'])
             ->where(['id' => '[0-9]+']);
 
         Route::get('/invoices/create', [InvoicesController::class, 'create']);
+
+        Route::post('/invoices/create', [CompaniesController::class, 'store']);
         
         Route::get('/invoices/{id}/edit', [InvoicesController::class, 'edit'])
             ->where(['id' => '[0-9]+']);

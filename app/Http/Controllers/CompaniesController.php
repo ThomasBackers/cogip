@@ -39,7 +39,25 @@ class CompaniesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'address' => 'required',
+            'zip_code' => 'required',
+            'city' => 'required',
+            'country' => 'required',
+            'vat_number' => 'required',
+            'category' => 'required'
+        ]);
+
+        Post::create([
+            'name' => $request->input('name'),
+            'address' => $request->input('address'),
+            'zip_code' => $request->input('zip_code'),
+            'city' => $request->input('city'),
+            'country' => $request->input('country'),
+            'vat_number' => $request->input('vat_number'),
+            'category' => $request->input('category')
+        ]);
     }
 
     /**
